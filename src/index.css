@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Design tokens — same "Night" colors as the Figma file.
+   Change a value here and it updates everywhere (e.g. bg-accent, text-paragraph). */
+@theme {
+  --color-bg: #232946;
+  --color-header: #121629;
+  --color-surface: #2b3155;
+  --color-surface-2: #343b66;
+  --color-line: #3f4775;
+  --color-headline: #fffffe;
+  --color-paragraph: #b8c1ec;
+  --color-accent: #eebbc3;
+  --color-accent-strong: #d4939d;
+
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-blink: blink 1s step-end infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg font-sans text-paragraph antialiased;
+  }
+  /* Keep section titles visible below the fixed header when jumping via the menu */
+  section[id],
+  footer[id] {
+    scroll-margin-top: 5rem;
+  }
+  ::selection {
+    @apply bg-accent text-bg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
