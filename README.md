@@ -41,12 +41,3 @@ src/
     ui.jsx      shared pieces (SectionHeading, Chip, Photo, Button)
     Icons.jsx   inline SVG icons
 ```
-
-## Put it online (free)
-
-**Vercel (easiest):** push this folder to a GitHub repo, go to vercel.com → *Add New Project* → import the repo →
-*Deploy*. Vercel detects Vite automatically.
-
-**Netlify:** same idea — build command `npm run build`, publish directory `dist`.
-
-To check the production build yourself: `npm run build` then `npm run preview`.
