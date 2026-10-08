@@ -42,7 +42,7 @@ function Cluster({ tools, layout, side }) {
   return (
     <ul
       aria-label={side === 'left' ? 'Design & productivity tools' : 'Languages & frameworks'}
-      className={`absolute bottom-8 hidden h-[calc(var(--tile)*2.4)] w-[34%] lg:block ${
+      className={`absolute top-0 bottom-6 w-[34%] ${
         side === 'left' ? 'left-6 xl:left-10' : 'right-6 xl:right-10'
       }`}
     >
@@ -67,7 +67,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden [--tile:clamp(76px,6.2vw,118px)] lg:min-h-[max(760px,calc(100svh-5rem))]"
+      className="relative overflow-hidden [--tile:clamp(76px,6.2vw,118px)] lg:flex lg:min-h-[max(760px,calc(100svh-5rem))] lg:flex-col"
     >
       {/* soft pink glow behind the illustration */}
       <div
@@ -75,7 +75,8 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-0 left-1/2 h-[60%] w-[min(720px,80vw)] -translate-x-1/2 rounded-full bg-accent/35 blur-3xl dark:bg-accent/15"
       />
 
-      <div className="relative mx-auto max-w-[1600px] px-5 pt-8 lg:px-10 lg:pt-12">
+      {/* not `relative` on lg, so the illustration anchors to the bottom of the whole section */}
+      <div className="relative mx-auto w-full max-w-[1600px] px-5 pt-8 lg:static lg:px-10 lg:pt-12">
         <h1 className="relative z-0 text-center text-[clamp(2.6rem,calc(8vw-0.5rem),9rem)] leading-[0.95] font-extrabold tracking-[-0.03em] text-ink lg:whitespace-nowrap">
           {profile.name}
         </h1>
@@ -130,7 +131,7 @@ export default function Hero() {
           width="352"
           height="620"
           fetchPriority="high"
-          className="relative z-10 mx-auto mt-6 h-[380px] w-auto select-none sm:h-[460px] lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:h-[min(82%,760px)] lg:-translate-x-1/2"
+          className="relative z-10 mx-auto mt-6 h-[380px] w-auto select-none sm:h-[460px] lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:h-[min(84%,800px)] lg:-translate-x-1/2"
           draggable="false"
         />
 
@@ -151,8 +152,11 @@ export default function Hero() {
         </ul>
       </div>
 
-      <Cluster tools={profile.heroTools.left} layout={LEFT_LAYOUT} side="left" />
-      <Cluster tools={profile.heroTools.right} layout={RIGHT_LAYOUT} side="right" />
+      {/* Bottom band for the floating tiles — in the normal flow so they never cover the buttons */}
+      <div className="relative mt-auto hidden h-[calc(var(--tile)*2.8)] shrink-0 lg:block">
+        <Cluster tools={profile.heroTools.left} layout={LEFT_LAYOUT} side="left" />
+        <Cluster tools={profile.heroTools.right} layout={RIGHT_LAYOUT} side="right" />
+      </div>
     </section>
   )
 }
