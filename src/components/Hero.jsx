@@ -89,9 +89,8 @@ export default function Hero() {
             </span>
             {profile.availability}
           </span>
-          <p className="text-2xl font-medium text-ink md:text-3xl">{profile.title}</p>
-          {/* Typing line from the original version */}
-          <p className="-mt-2 min-h-[1.5em] text-xl font-semibold text-ink md:text-2xl">
+          {/* Typing line — min-height fits two lines so long roles don't make the page jump */}
+          <p className="min-h-[2.75em] text-2xl leading-snug font-semibold text-ink md:text-[1.75rem]">
             <span aria-hidden="true">
               I am a <span className="text-accent-ink">{role}</span>
               <span className="ml-1 inline-block h-[1em] w-[3px] translate-y-1 animate-blink bg-accent-ink" />

@@ -21,7 +21,9 @@ export const profile = {
     left: ['Figma', 'Canva', 'VS Code', 'Android Studio', 'Xcode', 'Microsoft 365'],
     right: ['Google Workspace', 'Dart / Flutter', 'Swift', 'Java', 'Python', 'C++'],
   },
+  // Typed one after another on the home page ("I am a …")
   roles: [
+    '4th Year Computer Science Student',
     'Software Engineering Student',
     'UI/UX Designer',
     'Mobile App Developer',
