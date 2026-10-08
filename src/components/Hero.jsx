@@ -1,6 +1,7 @@
 import { profile } from '../data/profile'
 import { ArrowRightIcon, DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from './Icons'
 import { Button } from './ui'
+import { ToolLogo } from './ToolLogos'
 import { useTypewriter } from '../hooks/useTypewriter'
 
 // Tile positions copied from the Figma "Home" frame, as % of each cluster.
@@ -29,10 +30,11 @@ function Tile({ label, style, delay }) {
       style={{ ...style, animationDelay: delay }}
     >
       <span
-        className="grid size-full animate-float place-items-center rounded-[22%] border border-line bg-tile p-2 text-center text-[clamp(11px,0.95vw,15px)] leading-tight font-medium text-ink shadow-soft transition-transform duration-300 group-hover:rotate-0! group-hover:scale-105"
+        className="flex size-full animate-float flex-col items-center justify-center gap-[8%] rounded-[22%] border border-line bg-tile p-2 text-center text-[clamp(10px,0.8vw,13px)] leading-tight font-medium text-ink shadow-soft transition-transform duration-300 group-hover:rotate-0! group-hover:scale-105"
         style={{ rotate: style.rotate, animationDelay: delay }}
       >
-        {label}
+        <ToolLogo name={label} className="size-[42%] shrink-0" />
+        <span>{label}</span>
       </span>
     </li>
   )
@@ -143,9 +145,10 @@ export default function Hero() {
           {allTools.map((t, i) => (
             <li
               key={t}
-              className="rounded-2xl border border-line bg-tile px-3.5 py-2 text-sm font-medium text-ink shadow-soft"
+              className="flex items-center gap-2 rounded-2xl border border-line bg-tile px-3.5 py-2 text-sm font-medium text-ink shadow-soft"
               style={{ rotate: `${i % 2 ? 3 : -3}deg` }}
             >
+              <ToolLogo name={t} className="size-5 shrink-0" />
               {t}
             </li>
           ))}
