@@ -36,7 +36,7 @@ export const profile = {
   phone: '+63 995 841 4142',
   github: 'https://github.com/aliahkono',
   linkedin: 'https://www.linkedin.com/in/aliah-coleen-divinagracia-7365681aa/',
-  resume: '/resume.pdf',
+  resume: '/ACDiv-Resume.pdf',
   // Set these to your photos, e.g. '/images/profile.jpg'. Leave null to show a placeholder.
   photo: '/images/profile.jpg',
   // about-web.jpg is a web-sized copy of about.jpg (113 KB instead of 9 MB) so the page loads fast.
