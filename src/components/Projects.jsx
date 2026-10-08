@@ -18,50 +18,54 @@ export default function Projects() {
           subtitle="Full-cycle prototypes across web, mobile and embedded systems — designed, built and tested."
         />
 
-        {/* Featured project */}
-        <article data-reveal className="grid overflow-hidden rounded-[2rem] bg-navy text-on-navy-muted shadow-soft lg:grid-cols-[1.1fr_1fr]">
-          <div className="relative bg-navy-2 p-5 md:p-8">
+        {/* Featured project — showcase image shown whole at its real proportions, details below */}
+        <article data-reveal className="overflow-hidden rounded-[2rem] bg-navy text-on-navy-muted shadow-soft">
+          <div className="bg-[#0f1420] p-3 md:p-4">
             <Photo
               src={featured.image}
-              alt={`${featured.title} app screenshots`}
-              label={`[${featured.title} app screenshots]`}
-              className="h-full min-h-72 w-full rounded-2xl"
+              alt={`${featured.title} showcase: the donor mobile app and hospital web dashboard`}
+              label={`[${featured.title} showcase image]`}
+              className="aspect-[1200/628] w-full rounded-2xl object-contain!"
             />
           </div>
-          <div className="flex flex-col gap-5 p-8 md:p-12">
-            <div className="flex flex-wrap gap-2">
-              <Chip variant="accent">{featured.badge}</Chip>
-              <Chip variant="muted">{featured.period}</Chip>
-            </div>
-            <h3 className="text-5xl font-extrabold tracking-tight text-on-navy md:text-6xl">{featured.title}</h3>
-            <p className="leading-relaxed">{featured.description}</p>
-            <p className="rounded-2xl bg-navy-2 px-4 py-3 text-sm">
-              <span className="font-semibold text-accent">My role: </span>
-              <span className="text-on-navy">{featured.role}</span>
-            </p>
-            <ul aria-label="Technologies" className="flex flex-wrap gap-2">
-              {featured.tags.map((t) => (
-                <li key={t}>
-                  <Chip variant="navy">{t}</Chip>
-                </li>
-              ))}
-            </ul>
-            {featuredLinks.length > 0 && (
-              <div className="mt-auto flex flex-wrap gap-3 pt-2">
-                {featuredLinks.map(({ label, url }, i) => (
-                  <Button
-                    key={url}
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                    variant={i === 0 ? 'accent' : 'on-navy'}
-                    icon={GitHubIcon}
-                  >
-                    {label}
-                  </Button>
-                ))}
+          <div className="grid gap-8 p-8 md:p-12 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-wrap gap-2">
+                <Chip variant="accent">{featured.badge}</Chip>
+                <Chip variant="muted">{featured.period}</Chip>
               </div>
-            )}
+              <h3 className="text-5xl font-extrabold tracking-tight text-on-navy md:text-6xl">{featured.title}</h3>
+              <p className="leading-relaxed">{featured.description}</p>
+            </div>
+            <div className="flex flex-col gap-5 lg:pt-12">
+              <p className="rounded-2xl bg-navy-2 px-4 py-3 text-sm">
+                <span className="font-semibold text-accent">My role: </span>
+                <span className="text-on-navy">{featured.role}</span>
+              </p>
+              <ul aria-label="Technologies" className="flex flex-wrap gap-2">
+                {featured.tags.map((t) => (
+                  <li key={t}>
+                    <Chip variant="navy">{t}</Chip>
+                  </li>
+                ))}
+              </ul>
+              {featuredLinks.length > 0 && (
+                <div className="flex flex-wrap gap-3 pt-1">
+                  {featuredLinks.map(({ label, url }, i) => (
+                    <Button
+                      key={url}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      variant={i === 0 ? 'accent' : 'on-navy'}
+                      icon={GitHubIcon}
+                    >
+                      {label}
+                    </Button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </article>
 
