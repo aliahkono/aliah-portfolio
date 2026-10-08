@@ -35,7 +35,7 @@ export const profile = {
   email: 'aliahcoleen.divi@gmail.com',
   phone: '+63 995 841 4142',
   github: 'https://github.com/aliahkono',
-  linkedin: 'https://linkedin.com/in/aliah-coleen-divinagracia',
+  linkedin: 'https://www.linkedin.com/in/aliah-coleen-divinagracia-7365681aa/',
   resume: '/resume.pdf',
   // Set these to your photos, e.g. '/images/profile.jpg'. Leave null to show a placeholder.
   photo: '/images/profile.jpg',

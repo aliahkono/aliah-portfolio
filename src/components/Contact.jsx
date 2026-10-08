@@ -4,7 +4,7 @@ import { Button } from './ui'
 
 const channels = [
   { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, Icon: MailIcon },
-  { label: 'LinkedIn', value: 'aliah-coleen-divinagracia', href: profile.linkedin, Icon: LinkedInIcon, external: true },
+  { label: 'LinkedIn', value: 'Aliah Coleen Divinagracia', href: profile.linkedin, Icon: LinkedInIcon, external: true },
   { label: 'GitHub', value: profile.github.replace('https://', ''), href: profile.github, Icon: GitHubIcon, external: true },
   { label: 'Phone', value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}`, Icon: PhoneIcon },
 ]
