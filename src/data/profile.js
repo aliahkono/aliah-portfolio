@@ -6,7 +6,21 @@
 
 export const profile = {
   name: 'Aliah Coleen Divinagracia',
+  firstName: 'Aliah',
   handle: 'aliah.divinagracia',
+  logoText: 'AC',
+  wordmark: 'AC.Div',
+  title: '4th Year Computer Science Student',
+  pitch:
+    'Software Engineering student building web & mobile apps — designed in Figma, built with care, and tested before they ship.',
+  availability: 'Open to internships',
+  // The hero illustration (exported from the Figma "Home" frame).
+  illustration: '/images/hero-illustration.png',
+  // Floating tiles around the hero illustration. Left = design & productivity, right = languages & frameworks.
+  heroTools: {
+    left: ['Figma', 'Canva', 'VS Code', 'Android Studio', 'Xcode', 'Microsoft 365'],
+    right: ['Google Workspace', 'Dart / Flutter', 'Swift', 'Java', 'Python', 'C++'],
+  },
   roles: [
     'Software Engineering Student',
     'UI/UX Designer',
@@ -23,7 +37,8 @@ export const profile = {
   resume: '/resume.pdf',
   // Set these to your photos, e.g. '/images/profile.jpg'. Leave null to show a placeholder.
   photo: '/images/profile.jpg',
-  aboutPhoto: '/images/about.jpg',
+  // about-web.jpg is a web-sized copy of about.jpg (113 KB instead of 9 MB) so the page loads fast.
+  aboutPhoto: '/images/about-web.jpg',
 }
 
 export const about = {
@@ -117,17 +132,25 @@ export const projects = [
 
 export const skills = {
   groups: [
-    { icon: 'pen', name: 'UI/UX Design', items: ['Figma', 'Wireframing', 'Prototyping', 'User Personas'] },
+    {
+      icon: 'pen',
+      name: 'UI/UX Design',
+      text: 'Personas, wireframes and interactive prototypes that hand off cleanly to development.',
+      items: ['Figma', 'Canva', 'Wireframing', 'Prototyping', 'User Personas'],
+    },
     {
       icon: 'code',
       name: 'Development',
-      items: ['Flutter & Dart', 'Java', 'Swift', 'Web & App Development', 'SQL Databases', 'VS Code', 'Android Studio', 'Xcode'],
+      text: 'Cross-platform mobile and web apps backed by well-structured databases.',
+      items: ['Flutter & Dart', 'Java', 'Swift', 'Python', 'C++', 'SQL Databases', 'Web & App Development'],
     },
     {
       icon: 'check',
       name: 'Testing & QA',
+      text: 'Functional testing and clear documentation so software stays dependable.',
       items: ['Software Testing', 'Functional Testing', 'Quality Assurance', 'Technical Documentation'],
     },
   ],
+  tools: ['VS Code', 'Android Studio', 'Xcode', 'Figma', 'Canva', 'Microsoft 365', 'Google Workspace', 'GitHub'],
   soft: ['Attention to Detail', 'Critical Thinking', 'Collaboration', 'Problem-Solving', 'Task Tracking', 'Adaptability'],
 }

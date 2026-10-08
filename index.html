@@ -3,18 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aliah Coleen Divinagracia — Software Engineering Student</title>
     <meta
       name="description"
-      content="Aliah Coleen Divinagracia — Computer Science student specializing in Software Engineering. Web & mobile development, UI/UX design, and QA testing."
+      content="Portfolio of Aliah Coleen Divinagracia, a 4th-year Computer Science student (Software Engineering) open to internships in web & mobile development, UI/UX design, and QA testing."
     />
+    <meta name="theme-color" content="#232946" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aliah Coleen Divinagracia — Portfolio" />
+    <meta
+      property="og:description"
+      content="Software engineering student building web & mobile apps — designed in Figma, tested before they ship."
+    />
+    <meta property="og:image" content="/images/hero-illustration.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Aliah Coleen Divinagracia — Portfolio</title>
+    <link rel="preload" as="image" href="/images/hero-illustration.png" />
+    <!-- Apply the saved light/dark theme before the page paints (prevents a flash). -->
+    <script>
+      try {
+        var t = localStorage.getItem('theme')
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark')
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
