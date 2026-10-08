@@ -1,6 +1,7 @@
 import { profile } from '../data/profile'
 import { ArrowRightIcon, DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from './Icons'
 import { Button } from './ui'
+import { useTypewriter } from '../hooks/useTypewriter'
 
 // Tile positions copied from the Figma "Home" frame, as % of each cluster.
 // [left %, top %, rotation°] — rotations softened slightly so labels stay readable.
@@ -61,6 +62,7 @@ const socials = [
 
 export default function Hero() {
   const allTools = [...profile.heroTools.left, ...profile.heroTools.right]
+  const role = useTypewriter(profile.roles)
 
   return (
     <section
@@ -88,6 +90,14 @@ export default function Hero() {
             {profile.availability}
           </span>
           <p className="text-2xl font-medium text-ink md:text-3xl">{profile.title}</p>
+          {/* Typing line from the original version */}
+          <p className="-mt-2 min-h-[1.5em] text-xl font-semibold text-ink md:text-2xl">
+            <span aria-hidden="true">
+              I am a <span className="text-accent-ink">{role}</span>
+              <span className="ml-1 inline-block h-[1em] w-[3px] translate-y-1 animate-blink bg-accent-ink" />
+            </span>
+            <span className="sr-only">I am a {profile.roles.join(', ')}</span>
+          </p>
           <p className="text-base leading-relaxed md:text-lg">{profile.pitch}</p>
           <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
             <Button href="#projects" icon={ArrowRightIcon}>
